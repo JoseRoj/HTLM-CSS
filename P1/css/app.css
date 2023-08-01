@@ -1,0 +1,124 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem;
+}
+/* Globales */
+h1,h2,h3 { 
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+}
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.contenedor {  /* Nav centralizada en un with dado*/
+    max-width: 120rem;
+    margin: 0 auto; /* margin-inline: auto
+    /*width: 95%;*/
+}
+
+
+/** Header y Navegacion **/
+.nombre-sitio {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: center; 
+    font-size: 4rem;
+}
+.nombre-sitio span{
+    color: #037bc0 ;
+}
+.nav-principal{
+    padding: 2rem 0;  /* Reloj */
+    display: flex;
+    justify-content: space-between;  
+    /*flex-direction: row; default */
+}
+.hero{
+    background-image: url(../img/principal.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 55rem;
+
+}
+.contenedor-navegacion{
+    border-top:  .1rem solid #eaeaea  ;  /* width - style - color */
+}
+/** Box Model **/
+
+.sobre-nosotros{
+    background-color: red;
+    width:  20rem; 
+    padding: 2.5rem;
+    /*box-sizing: border-box;*/   
+}
+
+
+/* Categorias */
+.listado-categorias{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+.categorias h2{ 
+    text-align: center;
+}
+.categoria a{
+    text-align: center;
+    display: block;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+.categoria a:hover{
+    background-color: #037bc0;
+    color: #ffffff;
+    border-bottom-right-radius: 1rem;
+}
+/** Modulos = Cada uno de sus elementos 
+, BEM, SMACSS **/
+/* Box Model
+    contenido - padding - border - margin
+*/  
+
+/* 
+    Display
+        Block : Por debajo del otro, luego de tomar el espacio que requiere
+        Inline : A la derecha, luego de tomar el espacio que requiere
+        Inline-block : A la derecha y con ancho, alto, margin.
+*/
+
+/* Flex Box unidementional layout
+    display: flex;
+    flex-direction: row(default) | row-reverse | column | column-reverse;
+    flex-wrap: nowrap | wrap | wrap-reverse;
+    (row) justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+    (columns/row (height) align-items: stretch | flex-start | flex-end | center | baseline;
+    align-content: stretch | flex-start | flex-end | center | space-between | space-around;
+    order: <integer>;
+    flex-grow: <number>; /* default 0 
+    flex-shrink: <number>; /* default 1 
+    flex-basis: <length> | auto; /* default auto 
+    flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+    align-self: auto | flex-start | flex-end | center | baseline | stretch;
+*/
+
+/* CSS grid
+*/
+/*
+    em dificil de calcular
+    vw se adapta pero algunos dispositivos no la soportan
+    rem toman en consideracion el tamaaño del HTML (default 16 pixeles)es el mejor
+/*

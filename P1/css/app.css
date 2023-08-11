@@ -8,10 +8,21 @@ html {
 body{
     font-family: 'Raleway', sans-serif;
     font-size: 1.6rem;
+    line-height: 2;
 }
 /* Globales */
 h1,h2,h3 { 
     font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin : 0 0 5rem 0;
+}
+h1{
+    font-size: 5rem;
+}
+h2{
+    font-size: 4rem;
+}
+h3{
     font-size: 3rem;
 }
 a {
@@ -24,14 +35,39 @@ a {
     margin: 0 auto; /* margin-inline: auto
     /*width: 95%;*/
 }
+img{
+    max-width: 100%;
+    display: block;
+}
+.max-width-300{
+    max-width: 30rem;
+    /*margin: 0 auto;*/
+}
+.btn{
+    background-color: #8cbc00;
+    display: block;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: 900;
+    transform: background-color .3s ease;
+    padding: 1rem;
+    border: none;
+}
+.btn:hover{
+    background-color: #769c02;
+    cursor: pointer;
+}
 
+/* Utilidades */
+.text-center{
+    text-align: center;
+}
 
 /** Header y Navegacion **/
 .nombre-sitio {
     margin-top: 5rem;
     margin-bottom: 5rem;
     text-align: center; 
-    font-size: 4rem;
 }
 .nombre-sitio span{
     color: #037bc0 ;
@@ -46,21 +82,13 @@ a {
     background-image: url(../img/principal.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
     height: 55rem;
 
 }
 .contenedor-navegacion{
     border-top:  .1rem solid #eaeaea  ;  /* width - style - color */
 }
-/** Box Model **/
-
-.sobre-nosotros{
-    background-color: red;
-    width:  20rem; 
-    padding: 2.5rem;
-    /*box-sizing: border-box;*/   
-}
-
 
 /* Categorias */
 .listado-categorias{
@@ -68,13 +96,13 @@ a {
     grid-template-columns: repeat(3,1fr);
     grid-gap: 2rem
 }
-img{
-    max-width: 100%;
-    display: block;
+
+.categorias {
+    padding-top: 5rem;
 }
-.categorias h2{ 
+/*.categorias h2{ 
     text-align: center;
-}
+}*/
 .categoria a{
     text-align: center;
     display: block;
@@ -87,8 +115,203 @@ img{
     color: #ffffff;
     border-bottom-right-radius: 1rem;
 }
-/** Modulos = Cada uno de sus elementos 
-, BEM, SMACSS **/
+/* Bloque Sobre nosotros */
+.sobre-nosotros{
+    background-image: linear-gradient(to right, transparent 50%, #037bc0 50%), url(../img/nosotros.jpg); 
+    background-position: left center;
+    padding: 10rem 0;
+    background-repeat: no-repeat;
+    background-size: 100%, 120rem;
+    /*width:  20rem;*/ 
+    /*padding: 2.5rem;
+    /*box-sizing: border-box;*/   
+}
+.sobre-nosotros-grid{
+    display: flex;
+    justify-content: flex-end;
+}
+.texto-nosotros{
+    flex-basis: 50%;
+    padding-left: 8.5%;
+    color: #FFFFFF;
+}
+/* Listado Productos */
+.listado-productos{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 2rem;
+}
+.producto:nth-child(1){
+    grid-column-start: 1;
+    grid-column-end: 7;
+    /*grid-column: 1 / 7;*/
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.producto:nth-child(1) img{
+    width : 100%;
+    height: 50rem;
+    object-fit: cover;
+}
+.producto:nth-child(2){
+    grid-column: 1/4;
+}
+.producto:nth-child(2) img, .producto:nth-child(3) img{
+    width : 100%;
+    height: 30rem;
+    object-fit: cover;
+}
+.producto:nth-child(3){
+    grid-column: 4/7;
+}
+.producto:nth-child(4){
+    grid-column: 1 / 3;
+}
+.producto:nth-child(5){
+    grid-column: 3 / 5;
+}
+.producto:nth-child(6){
+    grid-column: 5 / 7;
+}
+.contenido-principal{
+    padding-top: 5rem;
+}
+.producto{
+    background-color: #037bc0;
+}
+.texto-producto{
+    text-align: center;
+    color: #FFFFFF;
+    padding: 2rem;
+}
+.texto-producto p{
+    margin: 0 0 .5rem 0;
+}
+.texto-producto h3{
+    margin: 0;
+}
+.texto-producto .precio{
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+/* Footer */
+.site-footer{
+    border-top: .1rem solid #eaeaea ;
+    margin-top: 5rem;
+}
+.grid-footer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.grid-footer h3{
+    margin-bottom: .8rem ;
+}
+.footer-menu a{
+    display: block;
+}
+.copyright{
+    text-align: center;
+    margin-top: 5rem;
+}
+/* Nosotros */
+.contenido-nosotros{
+    display: grid;
+    /*grid-template-columns: 1fr 3fr;*/
+    grid-template-columns: repeat(auto-fit, minmax( 20rem , 1fr));
+    column-gap: 2rem;    
+} 
+.informacion-nosotros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ /** Blog **/ 
+.contenedor-blog{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+.entrada{
+    border-bottom: 0.2rem solid #eaeaea ;
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+}
+.entrada:last-of-type{
+    border: none;
+    padding-bottom: 0rem;
+    margin-bottom: 0rem;
+}
+.entrada-meta{
+    display: flex;
+    justify-content: space-between;
+}
+.entrada-meta p{
+    font-weight: bold;
+}
+.entrada-meta span{
+    color: #037bc0;
+}
+/* Galeria */ 
+.galeria{
+    list-style: none ;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr) ;   
+}
+.galeria img{
+    width: 40rem;
+    height: 40rem;
+    object-fit: cover;
+}
+/* Formulario */
+.formulario{
+    max-width: 60rem;
+    margin : 0 auto;
+}
+.formulario fieldset{
+    border: 0.2rem solid black;
+    margin-bottom: 2rem;
+}
+.formulario legend{
+    background-color: #037bc0;
+    width: 100%;
+    text-align: center;
+    color:#FFFFFF;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 1rem;
+    margin-bottom: 4rem;
+}
+.campo{
+    display: flex;
+    margin-bottom: 2rem;
+}
+.campo label{
+    flex-basis: 10rem;
+}
+.campo input:not([type="radio"]),
+.campo textarea,
+.campo select{
+    flex: 1;
+    padding: 1rem;
+}
+/* 
+Modulos :     
+    .card: {
+    .card h2{}
+BEM : Block element Modifier
+    .card{} : principal
+    .card__img{}...
+    .card__boton--activo{}
+Utilidades :  
+    .text/center: {}
+SMACSS :
+    #header, #nav : {}
+    #nav{} : que no comparten
+*/
 /* Box Model
     contenido - padding - border - margin
 */  

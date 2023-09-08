@@ -253,7 +253,7 @@ img{
 }
 .contenido-modelo{
     background-color: var(--blanco);
-    padding: 5rem;
+    padding:  0 5rem 2rem 0;
 }
 .basico{
     background-image: url(../img/modelo_basico.jpg);
@@ -288,6 +288,6 @@ img{
     }
     .elite .contenido-modelo {
         grid-column: 1/2;
-        padding: 2remm;
+        padding: 2rem;
     }
 }

@@ -339,3 +339,38 @@ img{
         grid-row: 1/2;
     }
 }
+
+/** Footer **/
+.footer{
+    height: 50rem;
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--blanco);
+}
+
+/*.barra-footer .contacto{
+    display: flex;
+    flex-direction: column;
+    
+}
+.barra-footer .contacto .navegacion{
+    display: flex;
+    flex-direction: row;
+    margin-right: 2rem;
+}*/
+.footer a{
+    color: var(--blanco);
+}
+
+.copyright{
+    background-color: var(--negro);
+    margin: 0;
+    text-align: center;
+    padding: 1rem;
+}
+
